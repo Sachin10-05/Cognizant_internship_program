@@ -1,0 +1,47 @@
+<!-- index.html -->
+
+<html>
+    <head>
+        <script src="script.js" type="text/javascript"> </script>
+    </head>
+    <body>
+        <h2>Feedback for the ART OF LIVING session</h2>
+        <table>
+            <tr>
+                <td>Enter the Feedback:</td>
+                <td><textarea id="feedback" name="textarea"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="create" onclick="addFeedback()">Add Feedback</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="view" onclick="displayFeedback()">View Feedback</button></td>
+            </tr>
+        </table>
+        <div id="result"></div>
+        
+    </body>
+</html>
+
+
+
+/************************************************************************************************************************************************************************/
+<!-- Script.js -->
+
+var x = [];
+function addFeedback(){
+    x.push(document.getElementById("feedback").value);
+    document.getElementById("result").innerHTML = "<h2>" + "Feedback Details " + "</h2>" + "Successfully Added Feedback Details!";
+    document.getElementById("feedback").value = "";
+}
+
+function displayFeedback(){
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("result").innerHTML += "<h2>" + "Feedback Details " + "</h2>";
+    for (var j in x) {
+        var k = parseInt(j)+1;
+        document.getElementById("result").innerHTML += "Feedback " + k + "<br>" +  x[j] + "<br>";
+    }
+}
