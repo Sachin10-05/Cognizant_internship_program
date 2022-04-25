@@ -1,0 +1,145 @@
+<!-- DO NOT CHANGE THE TEMPLATE. FILL ONLY THE SPECIFIED PART ALONE -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap-4 Containers and Drop Downs</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+   <style type="text/css">
+  .navbar-default {
+    background-color:#546d88;
+    border-color: #428BCA;
+    color: #FFFFFF;
+    }
+
+  .navbar-nav > li > a:hover, 
+  .navbar-default .navbar-nav > li > a:focus {
+    color: #FFFFFF;
+    background-color: #336699;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Lobster',cursive;
+    font-size: 18px;
+    line-height: 1.428571429;
+    background-color:#E3EAED;
+    color: #616161;
+    margin-top: 70px;
+  }
+
+  h1{
+    font-family: 'Lobster',cursive;
+  }
+</style>
+</head>
+
+<body>
+  <div id="page">
+    <header class="container">
+        <nav class="navbar navbar-expand-sm navbar-default navbar-dark fixed-top">
+      
+        <!-- Collection of nav links, forms, and other content for toggling. -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Contact Us</a>
+            </li>
+        </ul>
+        </nav>
+    </header> 
+    
+
+    <section id="body" class="container">
+      <div class="page-header">
+         <h1>Contact Us</h1>
+      </div>
+      <br>
+    <div class="row">
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label for="nameInput" class="col-md-3 col-form-label">Your Name</label>
+            <div class="col-md-9">
+              <div class="input-group">
+                <span class="input-group-text"><span class="fas fa-bars"></span></span>
+                <input type="text" name="nameInput" class="form-control" placeholder="e.g. Your Name" />
+               </div>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <label for="emailInput" class="col-form-label col-md-3">Email</label>
+            <div class="col-md-9">
+              <div class="input-group">
+                <span class="input-group-text">@</span>
+                <input type="email" name="emailInput" class="form-control" placeholder="e.g. Your Email" />
+              </div>
+            </div>
+          </div>
+
+        <div class="form-group row dropdown">
+            <label class="col-form-label col-md-4">Leisure Activity</label>
+            <div class="col-md-8">
+                <div class = "nav-item">
+                <button type="button" class="btn btn-info" id="selectButton">Select One...</button>
+                
+                <button type="button" class = "btn btn-info dropdown-toggle" id="selectButton" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class = "dropdown-menu" id="reasonDropdown">
+                   <li class="dropdown-item"><a>Robotics</a></li>
+                   <li  class="dropdown-item"><a>Learning</a></li>
+                   <li class="dropdown-item"><a>Air Sports</a></li>
+                   <li class="dropdown-divider"></li>
+                   <li class="dropdown-item disabled"><a>Meditation</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    
+
+        <div class="form-group row">
+         <label class="col-form-label col-md-3">Message</label>
+         <div class="col-md-9">
+            <textarea cols="40" rows="6" class="form-control" placeholder="e.g. The Message"></textarea>
+         </div>
+          </div>
+          
+          <div class="form-group row">
+            <div class="col-md-3 "></div>
+            <div class="col-md-9">
+                
+                
+                <input type="submit" class="btn btn-primary" value="Submit"> 
+                  
+              
+           </div>
+          </div>
+        </form>
+        </div>
+  </section>
+  
+   </div>
+   <script>
+  $("#reasonDropdown a").on("click", function () {
+    var reason = $(this).text();
+    $("#selectButton").text(reason);
+  });
+</script>
+
+</body>
+</html>
