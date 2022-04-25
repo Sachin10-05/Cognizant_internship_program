@@ -1,0 +1,72 @@
+/***********************************************************************************************************************************************************************/
+                                                                      /*feedback.html*/
+/***********************************************************************************************************************************************************************/
+
+<!DOCTYPE html>
+<!-- DO NOT DELETE THE GIVEN TEMPLATE. FILL YOUR CODE WHEREVER NECESSARY -->
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+
+	<div class="container border shadow-sm mx-5">
+		<h2>Feedback form</h2>
+		<form action="#" class="form-group" onsubmit="return false">
+			<div>
+				<label for="customerName">Customer Name:</label>
+				<!-- fill your code for customerName.  Use appropriate Bootstrap-4 classes -->
+                <input type="text" id="customerName" class="form-control" placeholder="Enter your name">
+			</div>
+			<div>
+				<label for="mobileNumber">Mobile Number:</label>
+				<!-- fill your code for mobileNumber. Use appropriate Bootstrap-4 classes -->
+                <input type="textbox" id="mobileNumber" class="form-control" placeholder="Enter your mobile number">
+			</div>
+			<div>
+				<label for="email">Email:</label>
+				<!-- fill your code for email. Use appropriate Bootstrap-4 classes -->
+                <input type="email" id="email" class="form-control" placeholder="Enter email">
+			</div>
+
+			<div class="form-check form-check-inline">
+				<label for="gender">Gender:</label>
+			
+                            
+				<!-- fill your code for gender - male. Use appropriate Bootstrap-4 classes-->
+				 <input class="form-check-input" type="radio" name="gender" value="Male" id="gender">
+				    <label class="form-check-label" > Male </label>   
+                
+				<!-- fill your code for gender - female. Use appropriate Bootstrap-4 classes-->
+                    <input class="form-check-input" type="radio" name="gender" value="Female" id="gender">
+				    <label class="form-check-label"> Female </label>
+                
+			</div>
+			<div>
+				<label for="remarks">Remarks:</label>
+				<!-- fill your code for remarks.  Use appropriate Bootstrap-4 classes -->
+               <textarea class="form-control" name="remarks" id=remarks rows="8" cols="40"></textarea>
+			</div>
+			<div class="form-check">
+				<!-- fill your code for subscribe. Use appropriate Bootstrap-4 classes -->
+
+                <input class="form-check-input" type="checkbox" id="subscribe">
+				<label> Accept to subscribe for newsletters through email</label>
+			</div>
+
+			<div>
+				<!-- fill your code for submit button.  Use appropriate Bootstrap-4 classes -->
+			    <input type="submit" class="btn btn-success btn-lg" name="submit" id="submit" value="submit" />
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
