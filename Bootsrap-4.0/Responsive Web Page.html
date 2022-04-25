@@ -1,0 +1,177 @@
+/*********************************************************************************************************************************************************************/
+                                                                    /*responsive.html*/
+/**********************************************************************************************************************************************************************/
+<!-- DO NOT ALTER THE GIVEN TEMPLATE. FILL YOUR CODE IN THE SPECIFIED PLACES ALONE  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="app.css" rel="stylesheet" />  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" role="navigation">
+        <div class="container-fluid">
+        
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a class="navbar-brand" href="#">MyBrand</a>
+        
+        
+                   
+		    <!-- FILL YOUR CODE FOR TOGGLE ICON BAR (BUTTON) FOR RESPONSIVE NAVIGATION BAR. USE APPROPRIATE BS4 CLASS NAMES -->
+		    <!-- Use navbar-toggler,collapse and navbar-toggler-icon classes wherever necessary and also set the data-target attribute-->
+		    
+		    <button id="btn-id" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse">
+		        <span class="navbar-toggler-icon"></span>
+		    </button>
+
+        
+        <!-- Collect the nav links, forms, and other contents for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
+            <ul class="navbar-nav  ml-auto">
+             <li class="nav-item"><a class="nav-link" href="#sports">Sports</a></li>
+             <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
+             <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
+            </ul>
+        </div> <!-- /.navbar-collapse -->
+    </div> <!-- /.container-fluid -->
+    </nav>
+    </header>
+
+    <div class="container-fluid container-sm-height">
+        <div class="row justify-content-center h-100">
+           <section class="col-sm-5 col-lg-6">
+            <article>           
+                 
+		    <!-- WRITE YOUR CODE FOR RESPONSIVE CIRCLE IMAGE -->
+		    <!-- Use Bootstrap-4 img-responsive and  rounded-circle classes -->
+		    
+		    <img src="nature.jpg" class="img-responsive rounded-circle">
+                    
+
+		        <div class="row">
+                   <p class="col-sm-10">
+                       I was a reader for two national screenplay competitions. I was an assistant to the president of 
+                       a talent management company, where I read screenplays that were submitted for consideration for Oscar 
+                       and Emmy-nominated actors as well as Oscar-nominated producers. 
+                   </p>
+                   <div class="col-sm-2">
+                       <input type="button" class="btn btn-primary" value="More..." />
+                   </div>
+                </div>
+                
+             </article>
+          </section>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <p class="col-sm-10">Story Board</p>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+/********************************************************************************************************************************************************************/
+                                                                  /*app.css*/
+/********************************************************************************************************************************************************************/
+
+/*Do not change the template.*/
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+    background-color: #333;
+    color: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+article {
+    padding: 40px;
+}
+article img {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-shadow: 6px 6px 8px #777;
+    margin-bottom: 20px;
+}
+article p {
+    font-size: 16px;
+}
+
+
+/* columns of same height styles */
+.container-xs-height {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+}
+.row-xs-height {
+    display:table-row;
+}
+.col-xs-height {
+    display:table-cell;
+    float:none;
+}
+@media (min-width: 768px) {
+    .container-sm-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-sm-height {
+        display:table-row;
+    }
+    .col-sm-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 992px) {
+    .container-md-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-md-height {
+        display:table-row;
+    }
+    .col-md-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 1200px) {
+    .container-lg-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-lg-height {
+        display:table-row;
+    }
+    .col-lg-height {
+        display:table-cell;
+        float:none;
+    }
+}
+
+
+
