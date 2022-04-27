@@ -1,0 +1,4 @@
+/*sample.sql*/
+
+ALTER TABLE COURSE
+ADD CONSTRAINT CHK_FEES CHECK (Fees > 0);
