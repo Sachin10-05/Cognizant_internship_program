@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Expenses Calculator</title>
+    <style>
+        body {
+            background-color: #E6E6FA;
+        }
+
+        h1 {
+            color: #800080;
+            font-family: cursive;
+            text-align: center;
+        }
+
+        table {
+            margin-left: 40%;
+            margin-right: auto;
+        }
+        #result{
+            text-align: center;
+        }
+
+        /* th{
+            background-color: #00FFFF;
+        } */
+    </style>
+
+    <script>
+        function calculateExpenses() {
+            var girls = document.getElementById("girlseval").value;
+            var boys = document.getElementById("boyseval").value;
+            var totalMonthlyAmount;
+
+            if (document.getElementById("activity").value == "Karate") {
+                totalMonthlyAmount = (parseInt(girls) + parseInt(boys)) * 600;
+            }
+            else {
+                totalMonthlyAmount = (parseInt(girls) + parseInt(boys))* 500;
+            }
+            document.getElementById("result").innerHTML = "Total Monthly Expenses is:"+ totalMonthlyAmount;
+            return false;
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>MONTHLY EXPENSES CALCULATOR</h1>
+    <form  onsubmit="return calculateExpenses()">
+        <table>
+            <tr>
+                <td>Group Head Name</td>
+                <td><input type="text" name="groupHeadName" placeholder="Enter the Group Head Name" required
+                        pattern="[a-zA-Z ]+"></td>
+            </tr>
+            <tr>
+                <td>Email ID</td>
+                <td><input type="email" name="groupHeadEmail" required></td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td><input type="text" name="groupHeadMobileNumber" placeholder="Enter the Mobile Number"
+                        pattern="[789][0-9]{9}" required></td>
+            </tr>
+            <tr>
+                <td>Extra-Curricular Activity</td>
+                <td id="activity">
+                    <input type="radio" name="xyz" value="Karate" required>Karate
+                    <input type="radio" name="xyz" value="Music" required>Music
+                </td>
+            </tr>
+            <tr>
+                <td>No of Girls</td>
+                <td><input type="range" id="girlseval" name="noOfGirls" min="0" max="500" required></td>
+            </tr>
+            <tr>
+                <td>No of Boys</td>
+                <td><input type="range" id="boyseval" name="noOfBoys" min="0" max="500" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Calculate Monthly Expenses"></td>
+                <td><input type="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="result"></div>
+
+</body>
+
+</html>
