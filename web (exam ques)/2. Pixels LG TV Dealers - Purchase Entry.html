@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixels LG TV Dealers - Purchase Entry</title>
+    <style>
+        body {
+            background-color: rgb(172, 41, 150);
+        }
+
+        h3 {
+            color: #FFFFFF;
+            background-color: #000000;
+            margin-left: 25%;
+            margin-right: auto;
+            text-align: center;
+            width: 50%;
+            font-family: Verdana;
+            padding: 5px;
+            border-radius: 6px;
+        }
+
+        table,
+        tr,
+        td {
+            font-weight: bold;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-spacing: 1px;
+            border-radius: 6px;
+            color: #000000;
+            background-color: #FFFFFF;
+            padding: 1px;
+        }
+
+        #submit {
+            color: #FFFFFF;
+            background-color: #000000;
+            margin-left: 25%;
+            margin-right: auto;
+            padding: 5px;
+            width: 50%;
+            font-family: Verdana;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        #result1,#result2
+        {
+            text-align: center;
+            color: #FFFFFF;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function today() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getDay();
+            var day = date.getDate();
+            var final_date = year + '-' + month + '-' + day;
+            document.getElementById("pdate").value = final_date;
+        }
+        function updateTextValue()
+        {
+            document.getElementById("cost").value;
+        }
+
+        function display() {
+            var t = document.getElementById("tax").value;
+            var p = document.getElementById("cost").value;
+            var tax_amount = p*(t/100);
+            var total_amount = parseInt(p) + parseInt(tax_amount);
+            var tv_model = document.getElementById("model").value;
+            var tv_type = document.getElementById("tvname").value;
+            var tv_size = document.getElementById("size").value;
+            var Payment_mode = document.getElementById("ptype").value;
+
+        
+        document.getElementById("result1").innerHTML = "Purchase of an LG " + tv_model+ "-" + tv_size + "," + tv_type +" has been logged!";
+        document.getElementById("result2").innerHTML = "An Amount of Rs. " + total_amount + "," + " inclusive of tax has been received by "+Payment_mode;
+        return false;
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Pixels LG TV Dealers - Purchase Entry</h3>
+    <table border="1">
+        <tr>
+            <td>Purchase Date</td>
+            <td><input type="text" id="pdate" required onfocus="today()"></td>
+        </tr>
+        <tr>
+            <td>Customer Name</td>
+            <td><input type="text" id="cname" placeholder="Enter the customer name" required pattern="[a-zA-Z ]+"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><textarea rows="4" cols="50" placeholder="Enter the address" id="address" required></textarea></td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td><input type="tel" id="phno" placeholder="Phone number" pattern="[789][0-9]{9}"></td>
+        </tr>
+        <tr>
+            <td>LG TV Type</td>
+            <td>
+                <select id="tvname" required>
+                    <option>Select TV Type..</option>
+                    <option>HD Ready TV</option>
+                    <option>LED HD-Ready TV</option>
+                    <option>4K UHD Smart LED TV</option>
+                    <option>LED Full HD TV</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td>
+                <select id="model" required>
+                    <option>Select model..</option>
+                    <option>32LM560BPTC</option>
+                    <option>32LM636BPTB</option>
+                    <option>55UM7300PTA</option>
+                    <option>43LM5600PTC</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Screen Size(diagonal)</td>
+            <td>
+                <select id="size" required>
+                    <option>Select screen size..</option>
+                    <option>32 Inches</option>
+                    <option>55 Inches</option>
+                    <option>43 Inches</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>warranty(in years)</td>
+            <td><input type="number" id="warranty" placeholder="Enter warranty in years"></td>
+        </tr>
+        <tr>
+            <td>Purchase Cost</td>
+            <td><input type="range" id="cost" min="20000" max="60000" required onchange="updateTextValue(this.value);"></td>
+        </tr>
+        <tr>
+            <td>Payment Type</td>
+            <td>
+                <select id="ptype" required>
+                    <option>"Debit card/Credit card"</option>
+                    <option>Card</option>
+                    <option>Cash</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Card No</td>
+            <td><input type="text" id="cardno" placeholder="Enter the card no" pattern="[0-9 ]{16}"></td>
+        </tr>
+        <tr>
+            <td>Expiry Date</td>
+            <td><input type="date" id="edate" placeholder="Enter the expiry date"></td>
+        </tr>
+        <tr>
+            <td>Tax%</td>
+            <td><input type="number" id="tax" placeholder="Enter the tax %" required></td>
+        </tr>
+    </table>
+
+    <div>
+        <input type="submit" id="submit" value="CONFIRM PURCHASE" onclick="display()">
+    </div>
+    <div id="result1"></div>
+    <div id="result2"></div>
+
+
+
+
+</body>
+
+</html>
