@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEhicle Service - Entry form </title>
+
+<style>
+    body{
+        background-color: #00ffcc;
+    }
+    h1{
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        color: #b03060;
+    }
+    table{
+        border-collapse: collapse;
+        width: 30%;
+        border: solid 5px black;
+        margin-left: 35%;
+        text-align: left;
+    }
+    td{
+        border: 2px solid black;
+        padding: 10px;
+    }
+    #submit{
+        margin-left: 45%;
+    }
+    #result{
+        font-style: italic;
+        color: #FF0000;
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+<script type="text/javascript">
+    function taxCalculation()
+    {
+        var p=parseInt(document.getElementById("serviceamount").value);
+        var s=document.getElementById("paymenttype").value;
+        var d;
+        if(s=="Credit Card")
+        {
+            d=7;
+        }
+        else if(s=="Debit Card")
+        {
+            d=5;
+        }
+        var tot=(p*(100+d))/100;
+        document.getElementById("result").innerHTML="Your vehicle services cost Rs."+tot;
+        return false;
+    }
+</script>
+</head>
+
+<body>
+    <h1>Vehicle Service - Payment Entry</h1>
+    <form class="myform" onsubmit="return taxCalculation()">
+        <table>
+            <tr>
+                <td>Vehicle Name</td>
+                <td><input type="text" name="vehiclename" id="vehiclename" placeholder="Enter the vehicle name" pattern="[A-Za-z0-9\s]{1,}"</td>
+            </tr>
+
+            <tr>
+                <td>Vehicle Number</td>
+                <td><input type="text" name="vehiclenumber" id="vehiclenumber" pattern="[TN]{2}[0-9]{1,2}[0-9]{4}" </td>
+            </tr>
+
+            <tr>
+                <td>Service Amount</td>
+                <td><input type="number" name="serviceamount" id="serviceamount" required</td>
+            </tr>
+
+            <tr>
+                <td>Payment Type</td>
+                <td>
+                    <select name="paymenttype" id="paymenttype">
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Debit Card">Debit Card</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="GET PRICE" id="submit" name="submit">
+    </form>
+    <br>
+    <div id="result"></div>
+    
+</body>
+</html>
