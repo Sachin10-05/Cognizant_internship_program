@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Tech Service Center</title>
+
+    <style type="text/css">
+        .demo {
+            color: #900043;
+            font-weight: bold;
+        }
+
+        body {
+            background-color: #0ca2b9;
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        h2 {
+            text-shadow: 2px 2px #900043;
+            color: #FFFFFF;
+        }
+
+        #submit, #reset {
+            font-weight: bold;
+            width: 10em;
+            height: 35px;
+            border-radius: 10px;
+            color: #FFFFFF;
+        }
+
+        table {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input,
+        textarea {
+            width: 30em;
+        }
+
+        td {
+            padding: 3px;
+        }
+
+        #yes,
+        #no,
+        #cleaning,
+        #repair,
+        #gas_refill {
+            width: 10pt;
+        }
+
+        #result {
+            text-shadow: 2px 2px #900043;
+            color: #FFFFFF;
+            font-weight: normal;
+            font-style: italic;
+            font-family: Candara;
+        }
+    </style>
+
+    <script>
+        function bookAppointment()
+        {
+            var C;
+            var ac;
+            var TSC;
+            var st1,st2,st3;
+            var YMC;
+            if (document.getElementById("cleaning").checked==true)
+            {
+                st1 = 500;
+            }
+            else{
+                st1=0;
+            }
+            if (document.getElementById("repair").checked==true)
+            {
+                st2 = 2000;
+            }
+            else
+            {
+                st2=0;
+            }
+            if(document.getElementById("gas_refill").checked==true)
+            {
+                st3 = 1000;
+            }
+            else
+            {
+                st3=0;
+            }
+
+            if (document.getElementById("yes").checked==true)
+            {
+                YMC=1000;
+            }
+            else
+            {
+                YMC=0;
+            }
+            
+            TSC = st1 + st2 + st3 + YMC;
+            ac=document.getElementById("acType").value;
+            C=document.getElementById("customerName").value;
+            document.getElementById("result").innerHTML = "Hello "+ C + " The estimated service charge for " + ac + " AC with yearly maintenance is Rs." + TSC;
+            return false;
+        }
+
+    </script>
+</head>
+
+<body class="demo">
+    <div id="header" class="">
+        <h2>ProTech Service Center</h2>
+    </div>
+
+    <form onsubmit="return bookAppointment()">
+        <table>
+            <tr>
+                <td>Customer Name</td>
+                <td><input type="text" id="customerName" placeholder="Enter your name" required></td>
+            </tr>
+
+            <tr>
+                <td>Mobile Number</td>
+                <td><input type="tel" id="mobileNumber" required</td>
+            </tr>
+
+            <tr>
+                <td>Email ID</td>
+                <td><input type="email" id="email" placeholder="Enter your email" required</td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td><textarea id="address" placeholder="Enter your address" rows="5" cols="25" required></textarea></td>
+            </tr>
+
+            <tr>
+                <td>AC Type</td>
+                <td>
+                    <input type="text" list="acTypes" id="acType">
+                    <datalist id="acTypes">
+                        <option value="Split">Split</option>
+                        <option value="Window">Window</option>
+                    </datalist>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Service Type</td>
+                <td>
+                    <input type="checkbox" name="serviceType" id="cleaning" value="Cleaning">Cleaning
+                    <input type="checkbox" name="serviceType" id="repair" value="Repair">Repair
+                    <input type="checkbox" name="serviceType" id="gas_refill" value="Gas Refill">Gas Refill
+                </td>
+            </tr>
+
+            <tr>
+                <td>Yearly Maintemance</td>
+                <td>
+                    <input type="radio" name="ymaintenance" value="Yes" id="yes">Yes
+                    <input type="radio" name="ymaintenance" value="No" id="no">No
+                </td>
+            </tr>
+
+            <tr>
+                <td>Duration in months from previous service</td>
+                <td><input type="range" title="0 to 6 Months" id="duration" min="0" max="6"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" class="btn btn-success" id="submit" value="SUBMIT">
+                    <input  type="reset" class="btn btn-warning" id="reset" value="CLEAR">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div id="result"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+
+</html>
