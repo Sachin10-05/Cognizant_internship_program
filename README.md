@@ -1,2 +1,16 @@
+# ADM Standard DOT NET Suite
+This program was offered by Cognizant technology Solutions pvt. ltd. during my paid internship. <br />
+Below mentioned are the details for above internship program.
+
+
+## Description:
+This training provided practical hands-on experience and familiarization with new technologies and development tools like- UI or Scripting technologies, Databases, C#, .Net Frameworks, Unit Testing, Debugging, MS Visual Studio and soon. After training got chance to work on small project with four member team which basically comprised of all basic learnig provided within this internship program.
+
+
+## My Certificates:
+
+
+
+## Topics covered:
 ![ADM dotnet](https://user-images.githubusercontent.com/104192958/210924573-0031c858-3575-4bd4-996c-03ff4afbe17b.png)
 
